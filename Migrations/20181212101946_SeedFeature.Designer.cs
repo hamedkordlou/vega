@@ -9,8 +9,8 @@ using vega.Persistence;
 namespace vega.Migrations
 {
     [DbContext(typeof(VegaDbContext))]
-    [Migration("20181213132447_InitModel")]
-    partial class InitModel
+    [Migration("20181212101946_SeedFeature")]
+    partial class SeedFeature
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {

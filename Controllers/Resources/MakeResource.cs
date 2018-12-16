@@ -13,5 +13,6 @@ namespace vega.Controllers.Resources
         {
             Models = new Collection<ModelResource>();
         }
+
     }
 }

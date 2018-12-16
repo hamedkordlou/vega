@@ -24,10 +24,12 @@ namespace vega
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddAutoMapper();
+            //services.AddTransient<IRepository, Repository>();     // dependecy registration
             services.AddDbContext<VegaDbContext>(
                 options => options.UseSqlServer(Configuration.GetConnectionString("Default"))
                 );
-            services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
+
+            services.AddMvc().AddControllersAsServices().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
 
             // In production, the Angular files will be served from this directory
             services.AddSpaStaticFiles(configuration =>
@@ -42,6 +44,7 @@ namespace vega
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
+                
             }
             else
             {
