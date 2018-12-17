@@ -1,3 +1,4 @@
+import { FeatureService } from './services/feature.service';
 import { DropTestComponent } from './dropdown-test/drop-test/drop-test.component';
 import { MakeService } from './services/make.service';
 import { BrowserModule } from '@angular/platform-browser';
@@ -36,7 +37,8 @@ import { VehicleFormComponent } from './vehicle-form/vehicle-form.component';
     ])
   ],
   providers: [
-    MakeService
+    MakeService,
+    FeatureService
   ],
   bootstrap: [AppComponent]
 })
